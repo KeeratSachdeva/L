@@ -10,9 +10,14 @@
 
 <body>
     <button id="btn"> &gt; </button>
+    <div id="div"></div>
+
     <script>
+        var c=1;
         function f1() {
             console.log(1);
+            div.innerHTML = c;
+            c++;
         }
 
         var int;
@@ -21,6 +26,12 @@
             int = setInterval(f1, 100);
         });
         btn.addEventListener('touchend', function () {
+            clearInterval(int);
+        });
+        btn.addEventListener('mousedown', function () {
+            int = setInterval(f1, 100);
+        });
+        btn.addEventListener('mouseup', function () {
             clearInterval(int);
         });
 
