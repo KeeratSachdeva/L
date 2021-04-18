@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="btn"> &gt; </button>
+    <script>
+        function f1() {
+            console.log(1);
+        }
+
+        var int;
+        document.onkeydown = f1;
+        btn.addEventListener('touchstart', function () {
+            int = setInterval(f1, 100);
+        });
+        btn.addEventListener('touchend', function () {
+            clearInterval(int);
+        });
+
+        // $("#btn").mousedown().mouseup(function () {
+        //     clearInterval(int);
+        // });
+        // function performWhileMouseDown() {
+        //     $("#output").append("<p>Mouse down</p>");
+        // }
+    </script>
+</body>
+
+</html>
